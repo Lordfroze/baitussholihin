@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container-fluid">
         <nav class="navbar bg-body-tertiary">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
@@ -25,7 +25,7 @@
             <div class="card-body">
                 <h5 class="card-title">Welcome to Mushola Baitus Sholihin</h5>
                 <p class="card-text">Aplikasi informasi kegiatan beragama</p>
-                <a href="#userDate" class="btn btn-primary" id="btnMulai">Mulai</a>
+                <a href="#userDate" class="btn btn-primary" id="btnMulai">Dapatkan Jadwal Hari ini</a>
             </div>
             <div class="card-footer text-body-secondary">
                 <p class="fst-italic">Shalat adalah obat bagi jiwa yang hampa, pikiran yang bimbang, dan hati yang
@@ -34,18 +34,20 @@
         </div>
         <!-- header end -->
         <!-- form  -->
-        <form id="tanggal">
+        <!-- <form id="tanggal">
             <div class="mb-3">
                 <label for="tanggal" class="form-label">Masukkan Tanggal</label>
                 <input type="date" class="form-control" id="tanggal">
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+        </form> -->
         <!-- form end -->
         <div class="row mt-2">
             <div class="col-md-6">
                 <div class="table-responsive">
-                    <table class="table table-bordered border-primary">
+                    <h6>Jadwal Sholat <span id="lokasi"></span></h6>
+                    <p><span id="tanggal"></span></p>
+                    <table class="table">
                         <thead>
                             <tr>
                                 <th scope="col">Subuh</th>
