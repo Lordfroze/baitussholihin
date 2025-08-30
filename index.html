@@ -2,67 +2,78 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mushola Baitus Sholihin</title>
-  <link rel="stylesheet" href="bootstrap-5.3.8-dist/css/bootstrap.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mushola Baitus Sholihin</title>
+    <link rel="stylesheet" href="bootstrap-5.3.8-dist/css/bootstrap.min.css">
 </head>
 
 <body>
-  <div class="container">
-    <nav class="navbar bg-body-tertiary">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-          <img src="img/mushola.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-center">
-          Baitus Sholihin
-        </a>
-      </div>
-    </nav>
+    <div class="container">
+        <nav class="navbar bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="img/mushola.png" alt="Logo" width="50" height="50"
+                        class="d-inline-block align-text-center">
+                    Baitus Sholihin
+                </a>
+            </div>
+        </nav>
 
-    <!-- header -->
-    <div class="card text-center">
-      <div class="card-body">
-        <h5 class="card-title">Welcome to Mushola Baitus Sholihin</h5>
-        <p class="card-text">Aplikasi informasi kegiatan beragama</p>
-        <a href="#userDate" class="btn btn-primary">Mulai</a>
-      </div>
-      <div class="card-footer text-body-secondary">
-        <p class="fst-italic">Shalat adalah obat bagi jiwa yang hampa, pikiran yang bimbang, dan hati yang terluka.</p>
-      </div>
-    </div>
-    <!-- header end -->
-
-    <div class="row mt-2">
-     <div class="col-md-6">
-        <div class="table-responsive">
-          <table class="table table-bordered border-primary">
-            <thead>
-              <tr>
-                <th scope="col">Subuh</th>
-                <th scope="col">Dzuhur</th>
-                <th scope="col">Asar</th>
-                <th scope="col">Maghrib</th>
-                <th scope="col">Isya</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td id="subuh"></td>
-                <td id="dzuhur"></td>
-                <td id="asar"></td>
-                <td id="maghrib"></td>
-                <td id="isya"></td>
-              </tr>
-            </tbody>
-          </table>
+        <!-- header -->
+        <div class="card text-center">
+            <div class="card-body">
+                <h5 class="card-title">Welcome to Mushola Baitus Sholihin</h5>
+                <p class="card-text">Aplikasi informasi kegiatan beragama</p>
+                <a href="#userDate" class="btn btn-primary" id="btnMulai">Mulai</a>
+            </div>
+            <div class="card-footer text-body-secondary">
+                <p class="fst-italic">Shalat adalah obat bagi jiwa yang hampa, pikiran yang bimbang, dan hati yang
+                    terluka.</p>
+            </div>
         </div>
-      </div>
+        <!-- header end -->
+        <!-- form  -->
+        <form id="tanggal">
+            <div class="mb-3">
+                <label for="tanggal" class="form-label">Masukkan Tanggal</label>
+                <input type="date" class="form-control" id="tanggal">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <!-- form end -->
+        <div class="row mt-2">
+            <div class="col-md-6">
+                <div class="table-responsive">
+                    <table class="table table-bordered border-primary">
+                        <thead>
+                            <tr>
+                                <th scope="col">Subuh</th>
+                                <th scope="col">Dzuhur</th>
+                                <th scope="col">Asar</th>
+                                <th scope="col">Maghrib</th>
+                                <th scope="col">Isya</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td id="subuh"></td>
+                                <td id="dzuhur"></td>
+                                <td id="ashar"></td>
+                                <td id="maghrib"></td>
+                                <td id="isya"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
 
-  </div>
-  <script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
-  <script src="app.js"></script>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="app.js"></script>
 </body>
 
 </html>
