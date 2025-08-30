@@ -31,7 +31,11 @@ const getJadwalSholat = async (kota, date) => {
         return 'Gagal mengambil data';
     }
 }
-button.addEventListener('click', () => {
-    getJadwalSholat('1612', date);
 
-})
+getJadwalSholat('1612', date);
+
+// Klik manual
+// button.addEventListener('click', () => {
+//     getJadwalSholat('1612', date);
+
+// })
