@@ -15,7 +15,7 @@ const date = today.toISOString().split("T")[0].replace(/-/g, "-");  // ouput 202
 // Jadwal Sholat Harian
 const getJadwalSholat = async (kota, date) => {
     try {
-        const config ={
+        const config = {
             headers: {
                 'Accept': 'application/json'
             },
@@ -52,28 +52,34 @@ const getJadwalSholatBulanan = async (kota, tahun, bulan) => {
     try {
         const config = {
             heders: {
-                'Accept' : 'application/json'
+                'Accept': 'application/json'
             },
         }
         const res = await axios.get(`https://api.myquran.com/v2/sholat/jadwal/${kota}/${tahun}/${bulan}`, config);
         const data = res.data.data;
         console.log(data.jadwal);
 
+        const tbody = document.getElementById('jadwalBulanan-body')
+        tbody.innerHTML = "" // bersihkan
         // perulangan
-        data.jadwal.forEach(item => {
-    console.log("Tanggal:", item.tanggal);
-    console.log("Subuh:", item.subuh);
-    console.log("Dzuhur:", item.dzuhur);
-    console.log("Ashar:", item.ashar);
-    console.log("Maghrib:", item.maghrib);
-    console.log("Isya:", item.isya);
-    console.log("-----------");
-});
+        data.jadwal.forEach(i => {
+            const row = `
+        <tr>
+            <td>${i.tanggal}</td>
+            <td>${i.imsak}</td>
+            <td>${i.subuh}</td>
+            <td>${i.dzuhur}</td>
+            <td>${i.ashar}</td>
+            <td>${i.maghrib}</td>
+            <td>${i.isya}</td>
+        </tr>
+    `;
+            tbody.innerHTML += row;
+        });
 
     }
-
     catch {
-        console.log('data gak ketemu')
+        console.log('Data bulanan gak ketemu')
     }
 }
 
