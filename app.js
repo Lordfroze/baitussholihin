@@ -8,8 +8,11 @@ const lokasi = document.getElementById('lokasi');
 const tanggal = document.getElementById('tanggal');
 
 const today = new Date();
-const date = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`
-// console.log(date);
+const date = today.toISOString().split("T")[0].replace(/-/g, "-");  // ouput 2025-08-31
+// const date = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`
+console.log(date);
+
+// Jadwal Sholat Harian
 const getJadwalSholat = async (kota, date) => {
     try {
         const config ={
@@ -19,15 +22,19 @@ const getJadwalSholat = async (kota, date) => {
         }
 
         const res = await axios.get(`https://api.myquran.com/v2/sholat/jadwal/${kota}/${date}`, config);
-        console.log(res.data.data);
-        lokasi.innerHTML = res.data.data.lokasi;
-        tanggal.innerHTML = res.data.data.jadwal.tanggal;
-        subuh.innerHTML = res.data.data.jadwal.subuh;
-        dzuhur.innerHTML = res.data.data.jadwal.dzuhur;
-        ashar.innerHTML = res.data.data.jadwal.ashar;
-        maghrib.innerHTML = res.data.data.jadwal.maghrib;
-        isya.innerHTML = res.data.data.jadwal.isya;
+        console.log(res.data);
+
+        const { lokasi, jadwal } = res.data.data; // destructing 
+        lokasi.innerHTML = lokasi;
+        tanggal.innerHTML = jadwal.tanggal;
+        subuh.innerHTML = jadwal.subuh;
+        dzuhur.innerHTML = jadwal.dzuhur;
+        ashar.innerHTML = jadwal.ashar;
+        maghrib.innerHTML = jadwal.maghrib;
+        isya.innerHTML = jadwal.isya;
+
     } catch (error) {
+        lokasi.innerHTML = 'Gagal mengambil data';
         return 'Gagal mengambil data';
     }
 }
