@@ -28,7 +28,6 @@ const getJadwalSholat = async (kota, date) => {
         lokasi.innerHTML = lokasi;
         tanggal.innerHTML = jadwal.tanggal;
         subuh.innerHTML = jadwal.subuh;
-        imsak.innerHTML = jadwal.imsak;
         dzuhur.innerHTML = jadwal.dzuhur;
         ashar.innerHTML = jadwal.ashar;
         maghrib.innerHTML = jadwal.maghrib;
@@ -49,8 +48,6 @@ getJadwalSholat('1612', date);
 
 
 // Jawal Sholat bulanan
-const bulan = today.getMonth() + 1;
-console.log(bulan);
 const getJadwalSholatBulanan = async (kota, tahun, bulan) => {
     try {
         const config = {
@@ -86,7 +83,7 @@ const getJadwalSholatBulanan = async (kota, tahun, bulan) => {
     }
 }
 
-getJadwalSholatBulanan('1612', '2025', bulan);
+getJadwalSholatBulanan('1612', '2025', '08');
 
 
 
