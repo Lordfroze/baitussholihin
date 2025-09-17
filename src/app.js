@@ -22,9 +22,9 @@ const getJadwalSholat = async (kota, date) => {
         }
 
         const res = await axios.get(`https://api.myquran.com/v2/sholat/jadwal/${kota}/${date}`, config);
-        // console.log(res.data);
+        console.log(res.data);
 
-        const { lokasi, jadwal } = res.data.data; // destructing 
+        const { jadwal, lokasi } = res.data.data; // destructing 
         lokasi.innerHTML = lokasi;
         tanggal.innerHTML = jadwal.tanggal;
         subuh.innerHTML = jadwal.subuh;
@@ -34,7 +34,7 @@ const getJadwalSholat = async (kota, date) => {
         isya.innerHTML = jadwal.isya;
 
     } catch (error) {
-        lokasi.innerHTML = 'Gagal mengambil data';
+        // lokasi.innerHTML = 'Gagal mengambil data';
         return 'Gagal mengambil data';
     }
 }
