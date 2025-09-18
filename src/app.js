@@ -6,6 +6,7 @@ const maghrib = document.getElementById('maghrib');
 const isya = document.getElementById('isya');
 const lokasi = document.getElementById('lokasi');
 const tanggal = document.getElementById('tanggal');
+const keterangan = document.getElementById('keterangan');
 
 const today = new Date();
 const date = today.toISOString().split("T")[0].replace(/-/g, "-");  // ouput 2025-08-31
@@ -24,17 +25,19 @@ const getJadwalSholat = async (kota, date) => {
         const res = await axios.get(`https://api.myquran.com/v2/sholat/jadwal/${kota}/${date}`, config);
         console.log(res.data);
 
-        const { jadwal, lokasi } = res.data.data; // destructing 
-        lokasi.innerHTML = lokasi;
+        const { jadwal } = res.data.data; // destructing 
         tanggal.innerHTML = jadwal.tanggal;
         subuh.innerHTML = jadwal.subuh;
         dzuhur.innerHTML = jadwal.dzuhur;
         ashar.innerHTML = jadwal.ashar;
         maghrib.innerHTML = jadwal.maghrib;
         isya.innerHTML = jadwal.isya;
+        lokasi.innerHTML = res.data.data.lokasi;
+        // keterangan.innerHTML = res.status;
 
     } catch (error) {
-        // lokasi.innerHTML = 'Gagal mengambil data';
+        console.error(error);
+        keterangan.innerHTML = 'Gagal mengambil data';
         return 'Gagal mengambil data';
     }
 }
@@ -51,13 +54,13 @@ getJadwalSholat('1612', date);
 const getJadwalSholatBulanan = async (kota, tahun, bulan) => {
     try {
         const config = {
-            heders: {
+            headers: {
                 'Accept': 'application/json'
             },
         }
         const res = await axios.get(`https://api.myquran.com/v2/sholat/jadwal/${kota}/${tahun}/${bulan}`, config);
         const data = res.data.data;
-        console.log(data.jadwal);
+        // console.log(data.jadwal);
 
         const tbody = document.getElementById('jadwalBulanan-body')
         tbody.innerHTML = "" // bersihkan
