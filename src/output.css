@@ -2414,9 +2414,6 @@
   .mb-auto {
     margin-bottom: auto;
   }
-  .ml-5 {
-    margin-left: calc(var(--spacing) * 5);
-  }
   .carousel-item {
     box-sizing: content-box;
     display: flex;
@@ -2779,22 +2776,11 @@
   .grow {
     flex-grow: 1;
   }
-  .table-auto {
-    table-layout: auto;
-  }
   .caption-top {
     caption-side: top;
   }
   .border-collapse {
     border-collapse: collapse;
-  }
-  .border-separate {
-    border-collapse: separate;
-  }
-  .border-spacing-2 {
-    --tw-border-spacing-x: calc(var(--spacing) * 2);
-    --tw-border-spacing-y: calc(var(--spacing) * 2);
-    border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
   }
   .transform {
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
@@ -2832,9 +2818,6 @@
   }
   .flex-wrap-reverse {
     flex-wrap: wrap-reverse;
-  }
-  .justify-center {
-    justify-content: center;
   }
   .gap-0 {
     gap: calc(var(--spacing) * 0);
@@ -2970,9 +2953,6 @@
   }
   .border-black {
     border-color: var(--color-black);
-  }
-  .border-gray-400 {
-    border-color: var(--color-gray-400);
   }
   .border-info {
     border-color: var(--color-info);
@@ -3462,11 +3442,6 @@
   .lg\:hidden {
     @media (width >= 64rem) {
       display: none;
-    }
-  }
-  .dark\:border-gray-500 {
-    @media (prefers-color-scheme: dark) {
-      border-color: var(--color-gray-500);
     }
   }
 }
@@ -4779,16 +4754,6 @@
     background-position-x: -115%;
   }
 }
-@property --tw-border-spacing-x {
-  syntax: "<length>";
-  inherits: false;
-  initial-value: 0;
-}
-@property --tw-border-spacing-y {
-  syntax: "<length>";
-  inherits: false;
-  initial-value: 0;
-}
 @property --tw-rotate-x {
   syntax: "*";
   inherits: false;
@@ -4948,8 +4913,6 @@
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
-      --tw-border-spacing-x: 0;
-      --tw-border-spacing-y: 0;
       --tw-rotate-x: initial;
       --tw-rotate-y: initial;
       --tw-rotate-z: initial;
